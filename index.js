@@ -1,19 +1,27 @@
 function whiteBackground() {
-    var element = document.getElementsByTagName("body")[0];
-    element.style.backgroundColor = "white";
-    element.style.color = "black";
+    const element = document.getElementsByTagName("body")[0];
+    if (element.style.backgroundColor != "white") {
+        element.style.backgroundColor = "white";
+    }
+    if (element.style.color != "black") {
+        element.style.color = "black";
+    }
     //console.log("Background set to white")
 }
 
 function blackBackground() {
-    var element = document.getElementsByTagName("body")[0];
-    element.style.backgroundColor = "black";
-    element.style.color = "white";
+    const element = document.getElementsByTagName("body")[0];
+    if (element.style.backgroundColor != "black") {
+        element.style.backgroundColor = "black";
+    }
+    if (element.style.color != "white") {
+        element.style.color = "white";
+    }
     //console.log("Background set to black")
 }
 
 function getCurrentTime() {
-    now = new Date();
+    const now = new Date();
     return now;
 }
 
@@ -27,15 +35,15 @@ function padWithLeadingZero(i) {
 
 function timeToStr(time) {
     // Convert time to string in format hh:mm:ss
-    var hours = time.getHours();
-    var minutes = time.getMinutes();
-    var seconds = time.getSeconds();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
 
     hours = padWithLeadingZero(hours);
     minutes = padWithLeadingZero(minutes);
     seconds = padWithLeadingZero(seconds);
 
-    var clockStr = hours + ":" + minutes + ":" + seconds;
+    let clockStr = hours + ":" + minutes + ":" + seconds;
     return clockStr;
 }
 
@@ -49,8 +57,8 @@ function isItTime(now, time) {
 
 function updateTime() {
     const eightForty = "08:40:00"
-    var now = getCurrentTime();
-    var clockStr = timeToStr(now);
+    let now = getCurrentTime();
+    let clockStr = timeToStr(now);
     if (isItTime(clockStr, eightForty)) {
         whiteBackground();
     } else {
