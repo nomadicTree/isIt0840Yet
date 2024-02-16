@@ -43,7 +43,7 @@ function timeToStr(time) {
     minutes = padWithLeadingZero(minutes);
     seconds = padWithLeadingZero(seconds);
 
-    let clockStr = hours + ":" + minutes + ":" + seconds;
+    const clockStr = `${hours}:${minutes}:${seconds}`;
     return clockStr;
 }
 
@@ -57,8 +57,8 @@ function isItTime(now, time) {
 
 function updateTime() {
     const eightForty = "08:40:00"
-    let now = getCurrentTime();
-    let clockStr = timeToStr(now);
+    const now = getCurrentTime();
+    const clockStr = timeToStr(now);
     if (isItTime(clockStr, eightForty)) {
         whiteBackground();
     } else {
